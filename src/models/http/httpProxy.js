@@ -69,6 +69,7 @@ function create (logger) {
                 headers: helpers.clone(originalRequest.headers),
                 cert: proxyOptions.cert,
                 key: proxyOptions.key,
+                passphrase: proxyOptions.passphrase || null,
                 ciphers: proxyOptions.ciphers || 'ALL',
                 rejectUnauthorized: false
             };
@@ -146,6 +147,7 @@ function create (logger) {
      * @param {Object} options - Proxy options
      * @param {string} [options.cert] - The certificate, in case the destination requires mutual authentication
      * @param {string} [options.key] - The private key, in case the destination requires mutual authentication
+     * @param {string} [options.passphrase] - The passphrase, in case the destination requires mutual authentication
      * @param {Object} [options.injectHeaders] - The headers to inject in the proxied request
      * @returns {Object} - Promise resolving to the response
      */
