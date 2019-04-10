@@ -26,6 +26,9 @@ function create (logger) {
         if (tail === '') {
             return path;
         }
+        if (tail.toLowerCase().includes('wsdl')) {
+            return `${path}?WSDL`;            
+        }
         return `${path}?${tail}`;
     }
 
